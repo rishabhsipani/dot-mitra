@@ -1,0 +1,180 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-navbar);
+  padding: var(--space-4) 0;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.navbar--scrolled {
+  background: rgba(11, 11, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border-dark);
+  padding: var(--space-3) 0;
+}
+
+.navbar--light.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-dot {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+}
+
+.navbar__logo-text {
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-white);
+  letter-spacing: var(--ls-tight);
+  transition: color var(--duration-fast) ease;
+}
+
+.navbar--light .navbar__logo-text {
+  color: var(--color-text-dark);
+}
+
+/* ── Desktop Links ── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.navbar__link {
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+  position: relative;
+}
+
+.navbar--light .navbar__link {
+  color: var(--color-text-body);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.navbar__link:hover {
+  color: var(--color-text-white);
+}
+
+.navbar--light .navbar__link:hover {
+  color: var(--color-text-dark);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* ── Desktop Actions ── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+/* ── Mobile Toggle ── */
+.navbar__menu-toggle {
+  display: none;
+  padding: var(--space-2);
+  color: var(--color-text-white);
+}
+
+.navbar--light .navbar__menu-toggle {
+  color: var(--color-text-dark);
+}
+
+/* ── Mobile Menu ── */
+.navbar__mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-dark);
+  z-index: calc(var(--z-navbar) - 1);
+  padding: 100px var(--container-px) var(--space-8);
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.navbar__mobile--open {
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.navbar__mobile-link {
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-white);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-accent);
+}
+
+.navbar__mobile-cta {
+  align-self: flex-start;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar__menu-toggle {
+    display: flex;
+  }
+}

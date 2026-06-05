@@ -1,0 +1,27 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section--light {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  padding: var(--section-py) 0;
+}
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-white);
+  padding: var(--section-py) 0;
+}
+
+.section--no-padding {
+  padding: 0;
+}
+
+.section--off-white {
+  background-color: var(--color-bg-off-white);
+  color: var(--color-text-dark);
+  padding: var(--section-py) 0;
+}

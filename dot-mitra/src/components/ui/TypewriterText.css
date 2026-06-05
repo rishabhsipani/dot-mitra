@@ -1,0 +1,71 @@
+/* ── Typewriter Wrapper ── */
+.tw-wrapper {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* Invisible sizer — reserves the exact space the word needs */
+.tw-sizer {
+  visibility: hidden;
+  display: inline-block;
+  white-space: pre;
+}
+
+/* Overlay for animated characters — sits on top of the sizer */
+.tw-chars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  white-space: pre;
+}
+
+/* Each character: solid purple that starts hidden */
+.tw-char {
+  display: inline-block;
+  color: var(--color-accent, #7B61FF);
+  -webkit-text-fill-color: var(--color-accent, #7B61FF);
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+/* When revealed, play the pop-in animation */
+.tw-char--show {
+  animation: twCharIn 0.25s ease-out forwards;
+}
+
+@keyframes twCharIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cursor */
+.tw-cursor {
+  display: inline-block;
+  font-weight: 300;
+  margin-left: 1px;
+  opacity: 0;
+  /* Cursor uses normal text color, not gradient */
+  -webkit-text-fill-color: currentColor;
+  background: none;
+}
+
+.tw-cursor--show {
+  animation: twCursorBlink 0.7s step-end infinite, twCursorFadeOut 0.4s ease-out 1.2s forwards;
+}
+
+@keyframes twCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes twCursorFadeOut {
+  to { opacity: 0; }
+}

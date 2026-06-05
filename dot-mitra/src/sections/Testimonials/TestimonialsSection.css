@@ -1,0 +1,229 @@
+.testimonials__section {
+  padding: 100px 0;
+  background: var(--color-bg-light);
+  overflow: hidden;
+}
+
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ── Centered Header ── */
+.testimonials__header {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonials__title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.25;
+}
+
+.testimonials__highlight {
+  color: #6D2EFF;
+}
+
+.testimonials__subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ── Centered Card Stack ── */
+.testimonials__stack-container {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials__stack {
+  position: relative;
+  width: 100%;
+  height: 360px; /* height to accommodate the card contents comfortably */
+  margin-bottom: 32px;
+}
+
+.testimonial__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04), 0 3px 10px rgba(0, 0, 0, 0.02);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform-origin: center bottom;
+  box-sizing: border-box;
+}
+
+/* ── Card Header ── */
+.testimonial__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial__card-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.testimonial__card-logo-dot {
+  color: #6D2EFF;
+  font-size: 10px;
+}
+
+.testimonial__card-dots {
+  color: #cbd5e1;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ── Card Body ── */
+.testimonial__card-body {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.testimonial__card-quote-mark {
+  font-size: 4.5rem;
+  font-family: Georgia, serif;
+  color: #f1f5f9;
+  line-height: 1;
+  margin-bottom: -24px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.testimonial__card-quote {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* ── Card Footer ── */
+.testimonial__card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+}
+
+.testimonial__profile-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.testimonial__author {
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+}
+
+.testimonial__role {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.testimonial__card-social {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a66c2; /* Linkedin blue */
+}
+
+/* ── Controls (Steps Style) ── */
+.testimonial__controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.testimonial__control-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.testimonial__control-btn--active {
+  background-color: #6633ff;
+  color: #ffffff;
+}
+
+.testimonial__control-btn--active:hover {
+  background-color: #5229cc;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .testimonials__stack {
+    height: 420px; /* give more height on small screens for wrapping text */
+  }
+
+  .testimonial__card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials__stack {
+    height: 480px;
+  }
+}
