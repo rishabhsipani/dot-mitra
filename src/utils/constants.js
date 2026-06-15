@@ -24,7 +24,8 @@ export const NAV_LINKS = [
 ];
 
 export const FRAME_COUNT = 216;
-export const FRAME_PATH = '/frames/ezgif-frame-';
+export const FRAME_PATH =
+  `${import.meta.env.BASE_URL}frames/ezgif-frame-`;
 export const FRAME_EXTENSION = '.png';
 
 export function getFrameSrc(index) {
