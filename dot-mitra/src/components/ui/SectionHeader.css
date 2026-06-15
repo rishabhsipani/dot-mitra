@@ -12,7 +12,7 @@
 
 .section-header__title {
   font-size: var(--fs-h2);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-regular);
   line-height: var(--lh-snug);
   letter-spacing: var(--ls-tight);
   color: var(--color-text-dark);

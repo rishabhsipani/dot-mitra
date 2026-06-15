@@ -573,6 +573,10 @@ input:checked + .personalize__slider:before {
   }
 }
 
+.personalize__selector-grid--mobile {
+  display: none;
+}
+
 /* Responsive adjustment */
 @media (max-width: 1024px) {
   .personalize__workspace {
@@ -598,7 +602,15 @@ input:checked + .personalize__slider:before {
     grid-column: span 1;
   }
   .personalize__selector-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .personalize__selector-grid--desktop {
+    display: none;
+  }
+  .personalize__selector-grid--mobile {
+    display: grid;
+    margin-bottom: 24px;
   }
   .personalize__avatar-container {
     width: 180px;

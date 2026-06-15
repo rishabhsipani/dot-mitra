@@ -9,21 +9,21 @@ import './TestimonialsSection.css';
 const testimonials = [
   {
     company: "Ministry of Telecom",
-    quote: "Dot Mitra has made telecom policies, regulations, and notifications significantly easier to access. Teams can now find relevant information instantly instead of manually navigating through extensive documentation.",
+    quote: "DoT Mitra has made telecom policies, regulations, and notifications significantly easier to access. Teams can now find relevant information instantly instead of manually navigating through extensive documentation.",
     author: "Senior Officer",
     role: "Ministry of Telecommunications",
     rating: 5,
   },
   {
     company: "Municipal Corp",
-    quote: "Municipal queries dropped by 40% after deploying Dot Mitra. Citizens get direct answers regarding municipal guidelines and local procedures in regional languages instantly.",
+    quote: "Municipal queries dropped by 40% after deploying DoT Mitra. Citizens get direct answers regarding municipal guidelines and local procedures in regional languages instantly.",
     author: "Municipal Commissioner",
     role: "Municipal Corporation",
     rating: 5,
   },
   {
     company: "Admin Reforms",
-    quote: "On-boarding new officers used to take weeks of training on service rules. With Dot Mitra, they can query the system for administrative rules and receive instant, compliant responses.",
+    quote: "On-boarding new officers used to take weeks of training on service rules. With DoT Mitra, they can query the system for administrative rules and receive instant, compliant responses.",
     author: "Director of HR",
     role: "Dept of Administrative Reforms",
     rating: 5,

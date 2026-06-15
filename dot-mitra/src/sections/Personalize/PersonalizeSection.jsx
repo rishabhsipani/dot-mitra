@@ -115,6 +115,29 @@ export default function PersonalizeSection() {
     setGreeting(currentAssistant.greeting);
   }, [selectedIdx, currentAssistant]);
 
+  const renderSelectorGrid = (className) => (
+    <div className={`personalize__selector-grid ${className}`}>
+      {assistantsData.map((asst, idx) => {
+        const isActive = idx === selectedIdx;
+        return (
+          <button
+            key={asst.id}
+            className={`personalize__selector-card ${isActive ? 'active' : ''}`}
+            style={isActive ? { borderColor: brandColor, boxShadow: `0 0 12px ${brandColor}33` } : {}}
+            onClick={() => setSelectedIdx(idx)}
+          >
+            <div className="personalize__selector-img-container">
+              <img src={asst.image} alt={asst.name} className="personalize__selector-img" />
+            </div>
+            <span className="personalize__selector-name" style={isActive ? { color: brandColor } : {}}>
+              {asst.name}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+
   return (
     <SectionWrapper id="personalize" className="section--light personalize__wrapper">
       <div className="container">
@@ -145,6 +168,9 @@ export default function PersonalizeSection() {
             <h3 className="personalize__left-title">{botName}</h3>
             <p className="personalize__left-desc">{currentAssistant.description}</p>
           </div>
+
+          {/* MOBILE ONLY: Assistant Selector */}
+          {renderSelectorGrid('personalize__selector-grid--mobile')}
 
           {/* CENTER: Chat Widget Mockup */}
           <div className="personalize__panel-center">
@@ -235,13 +261,6 @@ export default function PersonalizeSection() {
                 <Settings size={16} />
                 Chat Settings
               </button>
-              <button 
-                className={`personalize__tab-btn ${activeTab === 'content' ? 'active' : ''}`}
-                onClick={() => setActiveTab('content')}
-              >
-                <FileText size={16} />
-                Content
-              </button>
             </div>
 
             {/* Tab Panels */}
@@ -313,50 +332,12 @@ export default function PersonalizeSection() {
                   />
                 </div>
               )}
-
-              {activeTab === 'content' && (
-                <div className="personalize__control-group animate-fade-in">
-                  <label className="personalize__control-label">Knowledge Base Source</label>
-                  <select className="personalize__select-input">
-                    <option>Telecom Policies PDF (14.2 MB)</option>
-                    <option>Defence Guidelines Handbook</option>
-                    <option>Skill Development FAQ</option>
-                    <option>Smart City Civic Database</option>
-                  </select>
-
-                  <div className="personalize__info-box" style={{ marginTop: '20px' }}>
-                    <div className="personalize__info-title">Contextual Training</div>
-                    <p className="personalize__info-text">
-                      Dot Mitra parses official documents to answer queries using standard RAG architectures. Custom rules prevent hallucinated responses.
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
 
-        {/* BOTTOM: Assistant Selector */}
-        <div className="personalize__selector-grid">
-          {assistantsData.map((asst, idx) => {
-            const isActive = idx === selectedIdx;
-            return (
-              <button
-                key={asst.id}
-                className={`personalize__selector-card ${isActive ? 'active' : ''}`}
-                style={isActive ? { borderColor: brandColor, boxShadow: `0 0 12px ${brandColor}33` } : {}}
-                onClick={() => setSelectedIdx(idx)}
-              >
-                <div className="personalize__selector-img-container">
-                  <img src={asst.image} alt={asst.name} className="personalize__selector-img" />
-                </div>
-                <span className="personalize__selector-name" style={isActive ? { color: brandColor } : {}}>
-                  {asst.name}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        {/* BOTTOM: Assistant Selector (Desktop Only) */}
+        {renderSelectorGrid('personalize__selector-grid--desktop')}
       </div>
     </SectionWrapper>
   );

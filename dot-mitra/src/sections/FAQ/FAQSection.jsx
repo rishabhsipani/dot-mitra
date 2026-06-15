@@ -92,7 +92,7 @@ export default function FAQSection() {
         <SectionHeader
           title="Frequently Asked Questions"
           highlightWord="Questions"
-          subtitle="Everything you need to know about Dot Mitra. Can't find what you're looking for? Contact our team."
+          subtitle="Everything you need to know about DoT Mitra. Can't find what you're looking for? Contact our team."
         />
 
         <div className="faq__list">

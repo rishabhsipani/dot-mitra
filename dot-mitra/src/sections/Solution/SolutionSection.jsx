@@ -22,6 +22,39 @@ export default function SolutionSection() {
   const pill3Ref = useRef(null);
   const pill4Ref = useRef(null);
 
+  const handleMouseMove = (e, ref) => {
+    // Only apply hover effect on desktop
+    if (window.innerWidth <= 1024 || !ref.current) return;
+    
+    const rect = ref.current.getBoundingClientRect();
+    const x = e.clientX - rect.left; // x position within the element
+    const y = e.clientY - rect.top; // y position within the element
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate rotation (-15deg to 15deg max)
+    const rotateX = ((y - centerY) / centerY) * -15; 
+    const rotateY = ((x - centerX) / centerX) * 15;
+    
+    gsap.to(ref.current, {
+      rotateX,
+      rotateY,
+      transformPerspective: 1000,
+      ease: "power2.out",
+      duration: 0.3
+    });
+  };
+
+  const handleMouseLeave = (ref) => {
+    if (!ref.current) return;
+    gsap.to(ref.current, {
+      rotateX: 0,
+      rotateY: 0,
+      ease: "power2.out",
+      duration: 0.5
+    });
+  };
+
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -114,7 +147,7 @@ export default function SolutionSection() {
             </div>
 
             <p className="solution__description">
-              Dot Mitra converts official documents into a secure AI-powered knowledge assistant that delivers accurate, context-aware responses using verified organizational data only.
+              DoT Mitra converts official documents into a secure AI-powered knowledge assistant that delivers accurate, context-aware responses using verified organizational data only.
             </p>
           </div>
 
@@ -133,28 +166,48 @@ export default function SolutionSection() {
 
             {/* Main Laptop */}
             <div className="solution__laptop-wrapper" ref={laptopRef}>
-              <img src={laptopMockup} alt="Dot Mitra Dashboard" className="solution__laptop-img" />
+              <img src={laptopMockup} alt="DoT Mitra Dashboard" className="solution__laptop-img" />
             </div>
 
             {/* Floating Elements */}
             <div className="solution__floating-elements">
 
-              <div className="solution__pill solution__pill--custom" ref={pill1Ref}>
+              <div 
+                className="solution__pill solution__pill--custom" 
+                ref={pill1Ref}
+                onMouseMove={(e) => handleMouseMove(e, pill1Ref)}
+                onMouseLeave={() => handleMouseLeave(pill1Ref)}
+              >
                 <img src={customBrandingIcon} alt="Custom Branding" className="solution__pill-icon" />
                 <span>Custom Branding <br />& Workflows</span>
               </div>
 
-              <div className="solution__pill solution__pill--fast" ref={pill2Ref}>
+              <div 
+                className="solution__pill solution__pill--fast" 
+                ref={pill2Ref}
+                onMouseMove={(e) => handleMouseMove(e, pill2Ref)}
+                onMouseLeave={() => handleMouseLeave(pill2Ref)}
+              >
                 <img src={fastResponsesIcon} alt="Fast Responses" className="solution__pill-icon" />
                 <span>Fast Real-Time <br />Responses</span>
               </div>
 
-              <div className="solution__pill solution__pill--ai" ref={pill3Ref}>
+              <div 
+                className="solution__pill solution__pill--ai" 
+                ref={pill3Ref}
+                onMouseMove={(e) => handleMouseMove(e, pill3Ref)}
+                onMouseLeave={() => handleMouseLeave(pill3Ref)}
+              >
                 <img src={aiSearchIcon} alt="AI Search" className="solution__pill-icon" />
                 <span>AI-Based <br />Knowledge Search</span>
               </div>
 
-              <div className="solution__card solution__card--secure" ref={pill4Ref}>
+              <div 
+                className="solution__card solution__card--secure" 
+                ref={pill4Ref}
+                onMouseMove={(e) => handleMouseMove(e, pill4Ref)}
+                onMouseLeave={() => handleMouseLeave(pill4Ref)}
+              >
                 <img src={multiDeptImg} alt="Multi Department Setup" className="solution__card-img" />
                 <span className="solution__card-text">Secure Multi-Department<br />Setup</span>
               </div>

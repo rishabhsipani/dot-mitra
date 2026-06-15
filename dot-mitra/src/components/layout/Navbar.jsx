@@ -57,14 +57,14 @@ export default function Navbar() {
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
-      <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${isLight ? 'navbar--light' : ''}`} role="navigation" aria-label="Main navigation">
+      <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${isLight ? 'navbar--light' : ''} ${menuOpen ? 'navbar--menu-open' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="container navbar__inner">
-          <a href="/" className="navbar__logo" aria-label="Dot Mitra home">
+          <a href="/" className="navbar__logo" aria-label="DoT Mitra home">
             <img
               src={isLight ? logoBlack : logoWhite}
-              alt="Dot Mitra"
+              alt="DoT Mitra"
               className="navbar__logo-img"
-              style={{ height: '36px', width: 'auto' }}
+              style={{ height: '44px', width: 'auto' }}
             />
           </a>
 

@@ -120,7 +120,7 @@ export default function HeroSection() {
         <div className="hero-loader__content">
           <div className="hero-loader__logo">
             <span className="hero-loader__dot">●</span>
-            <span className="hero-loader__text">Dot Mitra</span>
+            <span className="hero-loader__text">DoT Mitra</span>
           </div>
           <div className="hero-loader__bar-track">
             <div
@@ -160,13 +160,12 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="hero__subtitle">
-              Dot Mitra turns government documents, policies, manuals, and enterprise knowledge into an AI-powered assistant for faster, smarter, and trusted access to information.
+              DoT Mitra turns government documents, policies, manuals, and enterprise knowledge into an AI-powered assistant for faster, smarter, and trusted access to information.
             </p>
           </div>
 
           <div ref={ctaRef} className="hero__cta-group">
             <CTAButton label="Request Demo" href="#" variant="primary" icon />
-            <CTAButton label="Explore Features" href="#solution" variant="secondary" />
           </div>
         </div>
       </div>

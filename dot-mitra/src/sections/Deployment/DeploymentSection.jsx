@@ -35,7 +35,7 @@ const steps = [
   {
     image: step5Img,
     title: 'Deploy on Your Website',
-    desc: 'Integrate Dot Mitra using a lightweight deployment script.'
+    desc: 'Integrate DoT Mitra using a lightweight deployment script.'
   }
 ];
 

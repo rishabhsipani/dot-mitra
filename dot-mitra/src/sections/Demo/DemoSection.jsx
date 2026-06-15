@@ -49,8 +49,8 @@ export default function DemoSection() {
     <SectionWrapper id="demo" className="section--off-white">
       <div className="container" ref={containerRef}>
         <SectionHeader
-          title="Experience Dot Mitra"
-          highlightWord="Dot Mitra"
+          title="Experience DoT Mitra"
+          highlightWord="DoT Mitra"
           subtitle="See how AI-powered knowledge assistants simplify access to official information in real time."
           alignment="center"
           className="demo__header"

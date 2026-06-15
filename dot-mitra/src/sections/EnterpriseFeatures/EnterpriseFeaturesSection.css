@@ -14,7 +14,7 @@
 
 .enterprise__title {
   font-size: clamp(2rem, 3.5vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 400;
   color: #1a1a2e;
   margin-bottom: 30px;
 }

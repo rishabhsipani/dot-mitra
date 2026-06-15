@@ -5,13 +5,19 @@ import card1 from '../../assets/card 1.png';
 import card2 from '../../assets/card 2.png';
 import card3 from '../../assets/card 3.png';
 import card4 from '../../assets/card4.png';
+
+import card1Mobile from '../../assets/card 1 mobile.png';
+import card2Mobile from '../../assets/card 2 mobile.png';
+import card3Mobile from '../../assets/card 3 mobile.png';
+import card4Mobile from '../../assets/card 4 mobile.png';
+
 import './UseCasesSection.css';
 
 const cards = [
-  { src: card1, alt: 'Citizen Helpdesk', rotation: 0 },
-  { src: card2, alt: 'Enterprise Knowledge Hub', rotation: -3 },
-  { src: card3, alt: 'Licensing & Compliance', rotation: -6 },
-  { src: card4, alt: 'Internal Operations', rotation: -9 },
+  { src: card1, mobileSrc: card1Mobile, alt: 'Citizen Helpdesk', rotation: 0 },
+  { src: card2, mobileSrc: card2Mobile, alt: 'Enterprise Knowledge Hub', rotation: -3 },
+  { src: card3, mobileSrc: card3Mobile, alt: 'Licensing & Compliance', rotation: -6 },
+  { src: card4, mobileSrc: card4Mobile, alt: 'Internal Operations', rotation: -9 },
 ];
 
 export default function UseCasesSection() {
@@ -123,7 +129,7 @@ export default function UseCasesSection() {
           <SectionHeader
             title="Built for Real-World Applications"
             highlightWord="Applications"
-            subtitle="From citizen services to enterprise operations, Dot Mitra helps organizations deliver faster, smarter, and more accessible information experiences."
+            subtitle="From citizen services to enterprise operations, DoT Mitra helps organizations deliver faster, smarter, and more accessible information experiences."
             alignment="center"
             className="uc__header"
           />
@@ -136,11 +142,14 @@ export default function UseCasesSection() {
               className="uc__card"
               style={{ zIndex: i + 1 }}
             >
-              <img
-                src={card.src}
-                alt={card.alt}
-                className="uc__card-img"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={card.mobileSrc} />
+                <img
+                  src={card.src}
+                  alt={card.alt}
+                  className="uc__card-img"
+                />
+              </picture>
             </div>
           ))}
         </div>

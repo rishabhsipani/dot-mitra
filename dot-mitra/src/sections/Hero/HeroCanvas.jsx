@@ -85,7 +85,7 @@ export default function HeroCanvas({ getFrame, frameIndex }) {
       ref={canvasRef}
       className="hero-canvas"
       role="img"
-      aria-label="Dot Mitra AI assistant — animated robot character on a futuristic platform"
+      aria-label="DoT Mitra AI assistant — animated robot character on a futuristic platform"
     />
   );
 }

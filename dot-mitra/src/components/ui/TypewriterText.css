@@ -3,6 +3,7 @@
   display: inline-block;
   position: relative;
   vertical-align: baseline;
+  font-weight: 700;
 }
 
 /* Invisible sizer — reserves the exact space the word needs */

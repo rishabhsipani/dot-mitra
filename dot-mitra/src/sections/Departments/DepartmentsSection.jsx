@@ -118,7 +118,7 @@ export default function DepartmentsSection() {
             </div>
             
             <div className="dept__footer-text">
-              <p>Customize Dot Mitra for ministries, enterprises, public<br/>portals, and citizen-facing platforms.</p>
+              <p>Customize DoT Mitra for ministries, enterprises, public<br/>portals, and citizen-facing platforms.</p>
             </div>
           </div>
         </div>

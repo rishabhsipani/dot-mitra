@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="footer__grid">
             {/* Brand Column */}
             <div className="footer__brand">
-              <a href="/" className="footer__logo" aria-label="Dot Mitra home">
+              <a href="/" className="footer__logo" aria-label="DoT Mitra home">
                 <img
                   src={logoWhite}
-                  alt="Dot Mitra"
+                  alt="DoT Mitra"
                   className="footer__logo-img"
                   style={{ height: '36px', width: 'auto' }}
                 />
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
 
           <div className="footer__bottom">
-            <p className="footer__copyright">© 2026 Dot Mitra. All rights reserved.</p>
+            <p className="footer__copyright">© 2026 DoT Mitra. All rights reserved.</p>
             <div className="footer__bottom-links">
               <a href="#privacy" className="footer__bottom-link">Privacy</a>
               <a href="#terms" className="footer__bottom-link">Terms</a>
