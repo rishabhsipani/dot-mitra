@@ -3,6 +3,7 @@ import { gsap } from '../../utils/gsapConfig';
 import SectionWrapper from '../../components/ui/SectionWrapper';
 import TypewriterText from '../../components/ui/TypewriterText';
 import contactUsBg from '../../assets/contact us.png';
+import { Mail, Phone } from 'lucide-react';
 import './ContactSection.css';
 
 export default function ContactSection() {
@@ -80,6 +81,17 @@ export default function ContactSection() {
               <p className="contact__desc">
                 Empower departments, enterprises, and citizen-facing platforms with instant access to trusted information through an AI-powered knowledge assistant.
               </p>
+              <div className="contact__details">
+                <span className="contact__detail-item">
+                  <Mail className="contact__detail-icon" />
+                  info@dotmitra.gov.in
+                </span>
+                <span className="contact__detail-divider">|</span>
+                <span className="contact__detail-item">
+                  <Phone className="contact__detail-icon" />
+                  +91-11 2345 6789
+                </span>
+              </div>
             </div>
 
             {/* Right Column: Form */}

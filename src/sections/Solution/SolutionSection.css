@@ -14,7 +14,7 @@
 
 .solution-section {
   background-color: var(--color-bg-light, #ffffff);
-  padding: 120px 0;
+  padding: var(--section-py) 0;
   overflow: hidden;
   position: relative;
 }

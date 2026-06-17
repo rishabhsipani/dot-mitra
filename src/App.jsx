@@ -74,10 +74,10 @@ function App() {
         <UseCasesSection />
         <DepartmentsSection />
         <PersonalizeSection />
-        <PricingSection />
+        <ContactSection />
+        {/* <PricingSection /> */}
         <TestimonialsSection />
         <AnalyticsSection />
-        <ContactSection />
         <FAQSection />
       </main>
       <Footer />

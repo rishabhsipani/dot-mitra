@@ -55,7 +55,7 @@
 }
 
 .problem__card-image-wrapper {
-  height: 150px;
+  height: 225px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,8 +63,8 @@
 }
 
 .problem__card-image {
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 210px;
+  max-height: 210px;
   object-fit: contain;
 }
 

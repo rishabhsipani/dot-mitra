@@ -55,6 +55,31 @@
   max-width: 480px;
 }
 
+.contact__details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 64px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact__detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact__detail-icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact__detail-divider {
+  color: rgba(255, 255, 255, 0.4);
+}
+
 /* ── Right Column ── */
 .contact__form {
   background: #FFF;

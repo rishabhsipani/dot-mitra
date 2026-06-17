@@ -85,7 +85,7 @@
   --space-30:  120px;
   --space-40:  160px;
 
-  --section-py:          clamp(64px, 10vw, 120px);
+  --section-py:          clamp(32px, 5vw, 60px);
   --container-max:       1200px;
   --container-px:        24px;
 
