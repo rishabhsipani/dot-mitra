@@ -60,7 +60,7 @@ export default function HeroSection() {
       ScrollTrigger.create({
         trigger: section,
         start: 'top top',
-        end: '+=900%',
+        end: '+=400%',
         pin: true,
         scrub: 0.3,
         anticipatePin: 1,
@@ -101,7 +101,7 @@ export default function HeroSection() {
       });
 
       // Crucial: Force GSAP to recalculate all trigger positions now that 
-      // the HeroSection's massive 900% pin-spacer has been injected into the DOM.
+      // the HeroSection's massive 400% pin-spacer has been injected into the DOM.
       // This prevents subsequent sections (like UseCases) from pinning at the wrong height.
       setTimeout(() => {
         ScrollTrigger.sort(); // Sort by DOM order just to be safe

@@ -70,7 +70,7 @@ function App() {
         <SolutionSection />
         <EnterpriseFeaturesSection />
         <DeploymentSection />
-        <DemoSection />
+        {/* <DemoSection /> */}
         <UseCasesSection />
         <DepartmentsSection />
         <PersonalizeSection />
