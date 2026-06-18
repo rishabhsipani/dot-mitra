@@ -64,13 +64,43 @@
   white-space: nowrap;
 }
 
-.hero__subtitle {
-  font-size: var(--fs-body);
-  color: var(--color-text-muted);
+.hero__subtitle-container {
+  position: relative;
+  height: 60px;
   max-width: 800px;
   margin: var(--space-6) auto 0 auto;
+  overflow: hidden;
+}
+
+.hero__subtitle-dynamic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(110%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
   line-height: var(--lh-relaxed);
+  pointer-events: none;
+}
+
+.hero__subtitle-dynamic--active {
+  opacity: 1;
+  transform: translateY(0);
   pointer-events: auto;
+}
+
+.hero__subtitle-dynamic--exit {
+  opacity: 0;
+  transform: translateY(-110%);
+}
+
+.hero__subtitle-dynamic--enter {
+  opacity: 0;
+  transform: translateY(110%);
 }
 
 /* ── Ticker (Vertical Word Cycler) ── */
@@ -127,7 +157,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  margin-top: var(--space-8);
+  margin-top: var(--space-5);
   pointer-events: auto;
 }
 
@@ -206,5 +236,9 @@
   .hero__cta-group {
     flex-direction: column;
     gap: var(--space-3);
+  }
+
+  .hero__subtitle-container {
+    height: 100px;
   }
 }

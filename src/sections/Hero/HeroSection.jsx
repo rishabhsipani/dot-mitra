@@ -7,6 +7,11 @@ import { FRAME_COUNT } from '../../utils/constants';
 import './HeroSection.css';
 
 const TICKER_WORDS = ['Policies', 'Rules', 'Public Services'];
+const SUBTITLES = [
+  'Navigate complex policy documents with instant, context-aware AI assistance.',
+  'Simplify compliance by finding the right regulations and operational guidelines in seconds.',
+  'Enable faster access to citizen services, schemes, and official information through AI-powered support.'
+];
 const WORD_BREAKPOINTS = [0, 0.25, 0.50]; // scroll progress thresholds
 
 export default function HeroSection() {
@@ -42,7 +47,7 @@ export default function HeroSection() {
             duration: 0.8,
             ease: 'power3.out',
           }, '-=0.5')
-          .from('.hero__subtitle', {
+          .from('.hero__subtitle-container', {
             y: 20,
             opacity: 0,
             duration: 0.8,
@@ -159,9 +164,22 @@ export default function HeroSection() {
                 </span>
               </span>
             </h1>
-            <p className="hero__subtitle">
-              DoT Mitra turns government documents, policies, manuals, and enterprise knowledge into an AI-powered assistant for faster, smarter, and trusted access to information.
-            </p>
+            <div className="hero__subtitle-container">
+              {SUBTITLES.map((subtitle, i) => (
+                <p
+                  key={i}
+                  className={`hero__subtitle-dynamic ${
+                    i === activeWordIndex ? 'hero__subtitle-dynamic--active' : ''
+                  } ${
+                    i < activeWordIndex ? 'hero__subtitle-dynamic--exit' : ''
+                  } ${
+                    i > activeWordIndex ? 'hero__subtitle-dynamic--enter' : ''
+                  }`}
+                >
+                  {subtitle}
+                </p>
+              ))}
+            </div>
           </div>
 
           <div ref={ctaRef} className="hero__cta-group">
