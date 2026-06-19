@@ -179,6 +179,8 @@ export default function TestimonialsSection() {
     });
   };
 
+const cardColors = ['#F0EBFF', '#EBF3FF', '#F1FFF8', '#F8FFEB', '#FFF7EB', '#FFEDEB'];
+
   return (
     <div ref={sectionRef} className="testimonials-wrapper">
       <SectionWrapper id="testimonials" className="testimonials__section">
@@ -202,6 +204,7 @@ export default function TestimonialsSection() {
                   key={i} 
                   ref={addToRefs}
                   className="testimonial__card"
+                  style={{ backgroundColor: cardColors[i % cardColors.length] }}
                 >
                   {/* Card Top Header */}
                   <div className="testimonial__card-header">
